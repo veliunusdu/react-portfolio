@@ -10,9 +10,8 @@ const projects = [
   {
     id: 2,
     title: 'tabu-kurd',
-    desc: 'Another cool project you built.',
+    desc: 'An app for playing Taboo, built with AI.',
     stack: ['Flutter'],
-    demo: 'https://another-demo.com',
     repo: 'https://github.com/veliunusdu/tabu-kurd'
   },
   {
@@ -20,14 +19,12 @@ const projects = [
     title: 'Matplotlib_3',
     desc: '',
     stack: ['Matplotlib','Pandas'],
-    demo: 'https://your-demo.com',
     repo: 'https://github.com/veliunusdu/Matplotlib_3'
   },{
     id: 4,
     title: 'Random-password',
     desc: 'Generate random passwords.',
-    stack: ['JavaScript'],
-    demo: 'https://your-demo.com',
+    stack: ['JavaScript'], 
     repo: 'https://github.com/veliunusdu/Random-password'
   }
 ]

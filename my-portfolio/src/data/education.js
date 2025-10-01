@@ -8,7 +8,7 @@ const education = {
     'Data Structures',
     'Computing in Java',
     'Discrete Mathematics',
-    'Algorithms'
+    'Algorithms',
   ]
 }
 

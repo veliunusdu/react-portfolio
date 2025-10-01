@@ -8,7 +8,8 @@ const skills = [
       { name: 'HTML', icon: 'html' },
       { name: 'CSS', icon: 'css' },
       { name: 'JavaScript (Basic)', icon: 'js' },
-      { name: 'SQL (Basic)', icon: 'sql' }
+      { name: 'MySQL', icon: 'sql' },
+      { name: 'MongoDB', icon: 'mongodb' }
     ]
   },
   {
@@ -23,7 +24,8 @@ const skills = [
     category: 'Languages',
     items: [
       { name: 'English', icon: 'english' },
-      { name: 'Turkish', icon: 'turkish' }
+      { name: 'Turkish', icon: 'turkish' },
+  { name: 'Spanish (Elementary)', icon: 'spanish' }
     ]
   },
   {

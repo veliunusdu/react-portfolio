@@ -33,12 +33,12 @@ export default function App() {
       <main>
         <section className="hero">
           <h2>Hi, I'm a Student</h2>
-          <p>I build cool things with code.</p>
+          <p>Hello, Hello</p>
         </section>
 
-  <Skills />
+        <Skills />
 
-  <Education />
+        <Education />
 
         <section className="projects">
           <h2>My Projects</h2>

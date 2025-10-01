@@ -12,11 +12,6 @@ export default function ProjectCard({ project }) {
           ))}
         </div>
         <div className="links">
-          {project.demo && (
-            <a href={project.demo} target="_blank" rel="noreferrer">
-              Demo
-            </a>
-          )}
           {project.repo && (
             <a href={project.repo} target="_blank" rel="noreferrer">
               Code

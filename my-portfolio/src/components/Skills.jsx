@@ -59,6 +59,14 @@ function Icon({ name }) {
 					<path d="M12 2l8 4v8l-8 6-8-6V6l8-4z" fill="#83CD29" />
 				</svg>
 			)
+		case 'mongodb':
+			return (
+				<svg width="18" height="18" viewBox="0 0 24 24" aria-hidden>
+					{/* simplified MongoDB leaf */}
+					<path d="M12 2s4 3 4.5 6.5S12 18 12 18s-4.5-8-4.5-9.5S12 2 12 2z" fill="#47A248" />
+					<path d="M12 5c1 1.5 1.5 3 1.2 5-.4 2.7-1.9 6.5-1.9 6.5s-1.6-3.6-1.9-6.5c-.3-2 .2-3.5 1.2-5 .6-.9 1.1-.9 1.4 0z" fill="#3A8A35" opacity="0.95" />
+				</svg>
+			)
 		case 'express':
 			return (
 				<svg width="18" height="18" viewBox="0 0 24 24" aria-hidden>
@@ -130,6 +138,9 @@ function Icon({ name }) {
 			return <span aria-hidden>🇬🇧</span>
 		case 'turkish':
 			return <span aria-hidden>🇹🇷</span>
+		case 'spanish':
+		case 'sp':
+			return <span aria-hidden>🇪🇸</span>
 		case 'ds':
 		case 'algorithms':
 			return (
