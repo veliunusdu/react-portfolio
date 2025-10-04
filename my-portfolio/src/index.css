@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=VT323');
 /* Theme Variables */
 :root {
   --bg: #ffffff;
@@ -351,136 +352,67 @@ button:hover {
 .contact-link { display: inline-block; }
 .email-btn { display: inline-block; margin: 8px auto 0; }
 
-/* Water-fill button: progressive fill while hover is held, with subtle wave */
+/* Liquid fill button style */
 .email-btn {
-  --fill-duration: 4s; /* how long to reach full */
+  --color: #284cff; /* base color used for border and fill */
   position: relative;
   display: inline-block;
-  padding: 12px 28px;
+  padding: 20px 44px;
+  margin: 12px;
   color: #fff;
-  background: transparent;
-  border: 2px solid var(--accent);
+  font-family: 'VT323', monospace;
+  font-size: 22px;
+  text-shadow: 0 3px 5px rgba(0,0,0,0.25);
   border-radius: 999px;
+  border: 6px solid var(--color);
+  background: transparent;
   overflow: hidden;
   cursor: pointer;
-  transition: color 0.25s ease;
-  z-index: 0;
+  transition: background-position 1.5s ease, color 0.2s ease;
 }
-
-/* Decorative glossy sheen */
 .email-btn::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
-  pointer-events: none;
-  z-index: 1;
-}
-
-/* Water layer that fills from bottom to top. The `fill` animation runs while hovered; if hover ends mid-animation it stays at that progress (paused). */
-.email-btn::after {
+  /* liquid background (repeating image) */
   content: "";
   position: absolute;
   left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-  transform: translateY(100%);
-  background: linear-gradient(180deg, rgba(80,200,150,0.95) 0%, rgba(34,162,110,0.95) 60%);
+  top: 0;
+  width: 200%;
+  height: 200%;
+  background-image: url('https://web.archive.org/web/20160312084140im_/http://splatoon.nintendo.com/assets/img/nav-bg-fill-blue.png?1443460871');
+  background-repeat: repeat-x;
+  background-position: 0 -100%;
+  transform: translate3d(0,0,0);
+  transition: background-position 1.5s ease;
   z-index: 0;
-  border-radius: 999px 999px 50% 50% / 50% 50% 10% 10%;
-  /* progressive fill animation (paused by default) */
-  animation: water-fill var(--fill-duration) linear forwards;
-  animation-play-state: paused;
-  mix-blend-mode: normal;
 }
-
-/* Wave overlay inside the water to add movement */
-.email-btn .wave {
-  position: absolute;
-  left: -25%;
-  bottom: -10%;
-  width: 150%;
-  height: 40%;
-  background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.12), rgba(255,255,255,0.02) 40%);
-  opacity: 0.6;
-  transform: translateY(0);
-  z-index: 2;
-  pointer-events: none;
-  animation: wave-move 2s linear infinite;
-  animation-play-state: paused;
+.email-btn:hover::before,
+.email-btn:focus::before {
+  background-position: 500% 100%;
 }
-
-/* Play both animations on hover/focus */
-.email-btn:hover::after,
-.email-btn:focus::after {
-  animation-play-state: running;
-}
-.email-btn:hover .wave,
-.email-btn:focus .wave {
-  animation-play-state: running;
-}
-
-/* Layered continuous waves */
-.email-btn .wave-back {
-  background: rgba(255,255,255,0.06);
-  height: 36%;
-  bottom: -6%;
-  opacity: 0.5;
-  z-index: 1;
-  filter: blur(6px);
-  animation: wave-move 3.6s linear infinite;
-}
-.email-btn .wave-front {
-  background: rgba(255,255,255,0.12);
-  height: 30%;
-  bottom: -8%;
-  opacity: 0.85;
-  z-index: 3;
-  mix-blend-mode: overlay;
-  animation: wave-move 1.8s linear infinite;
-}
-
-/* Subtle vertical bob for water realism */
-@keyframes wave-bob {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-4%); }
-  100% { transform: translateY(0); }
-}
-
-/* Use translateX for lateral wave movement combined with bob */
-@keyframes wave-move {
-  0% { transform: translateX(-10%) translateY(0); }
-  50% { transform: translateX(10%) translateY(-2%); }
-  100% { transform: translateX(-10%) translateY(0); }
-}
-
-/* Intensify waves on hover: speed up and increase amplitude */
-.email-btn:hover .wave-back {
-  animation-duration: 1.8s;
-  filter: blur(4px);
-  opacity: 0.8;
-}
-.email-btn:hover .wave-front {
-  animation-duration: 1s;
-  transform: translateY(-4%);
-  opacity: 1;
-}
-
-/* Change text color for contrast as water appears */
-.email-btn[data-inverted="true"] { color: #081107; }
 .email-btn:hover,
-.email-btn:focus { color: #081107; }
-
-@keyframes water-fill {
-  0% { transform: translateY(100%); }
-  100% { transform: translateY(0%); }
+.email-btn:focus {
+  color: #fff;
 }
 
-@keyframes wave-move {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(25%); }
-}
+/* Allow variation using nth-child hue-rotate similar to example */
+.wrapper button:nth-child(1) { filter: hue-rotate(20deg); }
+.wrapper button:nth-child(2) { filter: hue-rotate(40deg); }
+.wrapper button:nth-child(3) { filter: hue-rotate(60deg); }
+.wrapper button:nth-child(4) { filter: hue-rotate(80deg); }
+.wrapper button:nth-child(5) { filter: hue-rotate(100deg); }
+.wrapper button:nth-child(6) { filter: hue-rotate(120deg); }
+.wrapper button:nth-child(7) { filter: hue-rotate(140deg); }
+.wrapper button:nth-child(8) { filter: hue-rotate(160deg); }
+.wrapper button:nth-child(9) { filter: hue-rotate(180deg); }
+.wrapper button:nth-child(10) { filter: hue-rotate(200deg); }
+.wrapper button:nth-child(11) { filter: hue-rotate(220deg); }
+.wrapper button:nth-child(12) { filter: hue-rotate(240deg); }
+.wrapper button:nth-child(13) { filter: hue-rotate(260deg); }
+.wrapper button:nth-child(14) { filter: hue-rotate(280deg); }
+.wrapper button:nth-child(15) { filter: hue-rotate(300deg); }
+.wrapper button:nth-child(16) { filter: hue-rotate(320deg); }
+.wrapper button:nth-child(17) { filter: hue-rotate(340deg); }
+.wrapper button:nth-child(18) { filter: hue-rotate(360deg); }
 
 /* Footer */
 .site-footer {
