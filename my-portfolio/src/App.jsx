@@ -59,7 +59,11 @@ export default function App() {
               return (
                 <div className="contact-cta">
                   <a href={href} target="_blank" rel="noopener noreferrer" className="contact-link" aria-label="Send email">
-                    <button className="email-btn">Send me an email</button>
+                    <button className="email-btn" aria-label="Send me an email">
+                      Send me an email
+                      <span className="wave wave-back" aria-hidden></span>
+                      <span className="wave wave-front" aria-hidden></span>
+                    </button>
                   </a>
                 </div>
               )

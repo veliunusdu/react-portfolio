@@ -421,6 +421,52 @@ button:hover {
   animation-play-state: running;
 }
 
+/* Layered continuous waves */
+.email-btn .wave-back {
+  background: rgba(255,255,255,0.06);
+  height: 36%;
+  bottom: -6%;
+  opacity: 0.5;
+  z-index: 1;
+  filter: blur(6px);
+  animation: wave-move 3.6s linear infinite;
+}
+.email-btn .wave-front {
+  background: rgba(255,255,255,0.12);
+  height: 30%;
+  bottom: -8%;
+  opacity: 0.85;
+  z-index: 3;
+  mix-blend-mode: overlay;
+  animation: wave-move 1.8s linear infinite;
+}
+
+/* Subtle vertical bob for water realism */
+@keyframes wave-bob {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-4%); }
+  100% { transform: translateY(0); }
+}
+
+/* Use translateX for lateral wave movement combined with bob */
+@keyframes wave-move {
+  0% { transform: translateX(-10%) translateY(0); }
+  50% { transform: translateX(10%) translateY(-2%); }
+  100% { transform: translateX(-10%) translateY(0); }
+}
+
+/* Intensify waves on hover: speed up and increase amplitude */
+.email-btn:hover .wave-back {
+  animation-duration: 1.8s;
+  filter: blur(4px);
+  opacity: 0.8;
+}
+.email-btn:hover .wave-front {
+  animation-duration: 1s;
+  transform: translateY(-4%);
+  opacity: 1;
+}
+
 /* Change text color for contrast as water appears */
 .email-btn[data-inverted="true"] { color: #081107; }
 .email-btn:hover,
