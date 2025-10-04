@@ -354,7 +354,7 @@ button:hover {
 
 /* Liquid fill button style */
 .email-btn {
-  --color: #284cff; /* base color used for border and fill */
+  --color: #3b82f6; /* base color used for border and fill */
   position: relative;
   display: inline-block;
   padding: 20px 44px;
@@ -427,31 +427,31 @@ button:hover {
 .liquid-btn {
   position: relative;
   display: inline-block;
-  padding: 20px 50px;
+  padding: 10px 32px; /* even smaller vertical padding */
   text-decoration: none;
   text-transform: uppercase;
-  width: 260px;
+  width: 200px; /* slightly narrower */
   overflow: hidden;
-  border-radius: 40px;
+  border-radius: 30px;
   text-align: center;
 }
 .liquid-btn .label {
   position: relative;
   color: #fff;
-  font-size: 18px;
+  font-size: 15px; /* reduced font-size */
   font-family: 'VT323', monospace;
-  letter-spacing: 4px;
+  letter-spacing: 2px;
   z-index: 2;
 }
 .liquid-btn .liquid {
   position: absolute;
-  top: -80px;
+  top: -52px; /* shallower */
   left: 0;
-  width: 260px;
-  height: 260px;
+  width: 200px; /* reduced */
+  height: 200px; /* reduced */
   background: linear-gradient(180deg, #4973ff, #2f5bd6);
-  box-shadow: inset 0 0 50px rgba(0,0,0,0.5);
-  transition: .6s;
+  box-shadow: inset 0 0 40px rgba(0,0,0,0.45);
+  transition: .45s;
   z-index: 1;
   border-radius: 50%;
 }
