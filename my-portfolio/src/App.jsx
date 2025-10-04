@@ -58,12 +58,9 @@ export default function App() {
               const href = `https://mail.google.com/mail/?${params.toString()}`
               return (
                 <div className="contact-cta">
-                  <a href={href} target="_blank" rel="noopener noreferrer" className="contact-link" aria-label="Send email">
-                    <button className="email-btn" aria-label="Send me an email">
-                      Send me an email
-                      <span className="wave wave-back" aria-hidden></span>
-                      <span className="wave wave-front" aria-hidden></span>
-                    </button>
+                  <a href={href} target="_blank" rel="noopener noreferrer" className="liquid-btn contact-link" aria-label="Send email">
+                    <span className="liquid" aria-hidden></span>
+                    <span className="label">Send me an email</span>
                   </a>
                 </div>
               )

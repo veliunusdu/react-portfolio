@@ -394,6 +394,7 @@ button:hover {
   color: #fff;
 }
 
+
 /* Allow variation using nth-child hue-rotate similar to example */
 .wrapper button:nth-child(1) { filter: hue-rotate(20deg); }
 .wrapper button:nth-child(2) { filter: hue-rotate(40deg); }
@@ -420,6 +421,66 @@ button:hover {
   padding: 40px 0;
   border-top: 1px solid var(--border);
   color: var(--muted);
+}
+
+/* Liquid anchor button styles (Splatoon-like) */
+.liquid-btn {
+  position: relative;
+  display: inline-block;
+  padding: 20px 50px;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: 260px;
+  overflow: hidden;
+  border-radius: 40px;
+  text-align: center;
+}
+.liquid-btn .label {
+  position: relative;
+  color: #fff;
+  font-size: 18px;
+  font-family: 'VT323', monospace;
+  letter-spacing: 4px;
+  z-index: 2;
+}
+.liquid-btn .liquid {
+  position: absolute;
+  top: -80px;
+  left: 0;
+  width: 260px;
+  height: 260px;
+  background: linear-gradient(180deg, #4973ff, #2f5bd6);
+  box-shadow: inset 0 0 50px rgba(0,0,0,0.5);
+  transition: .6s;
+  z-index: 1;
+  border-radius: 50%;
+}
+.liquid-btn .liquid::before,
+.liquid-btn .liquid::after {
+  content: '';
+  width: 200%;
+  height: 200%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -75%);
+  background: rgba(0,0,0,0.05);
+}
+.liquid-btn .liquid::before {
+  border-radius: 45%;
+  background: rgba(20,20,20,1);
+  animation: liquid-rotate 6s linear infinite;
+}
+.liquid-btn .liquid::after {
+  border-radius: 40%;
+  background: rgba(20,20,20,0.5);
+  animation: liquid-rotate 12s linear infinite;
+}
+.liquid-btn:hover .liquid { top: -120px; }
+
+@keyframes liquid-rotate {
+  0% { transform: translate(-50%, -75%) rotate(0deg); }
+  100% { transform: translate(-50%, -75%) rotate(360deg); }
 }
 
 /* Responsive */
