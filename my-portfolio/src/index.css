@@ -351,6 +351,43 @@ button:hover {
 .contact-link { display: inline-block; }
 .email-btn { display: inline-block; margin: 8px auto 0; }
 
+/* Liquid fill button style */
+.email-btn {
+  position: relative;
+  display: inline-block;
+  padding: 12px 28px;
+  color: #fff;
+  background: transparent;
+  border: 2px solid var(--accent);
+  border-radius: 999px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: color 0.35s ease;
+  z-index: 0;
+}
+.email-btn::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scaleX(0);
+  transform-origin: center;
+  width: 140%;
+  height: 140%;
+  background: linear-gradient(90deg, rgba(58,139,53,0.95), rgba(71,162,72,0.95));
+  border-radius: 50%;
+  transition: transform 0.5s cubic-bezier(.2,.9,.2,1);
+  z-index: -1;
+}
+.email-btn:hover::before,
+.email-btn:focus::before {
+  transform: translate(-50%, -50%) scaleX(1);
+}
+.email-btn:hover,
+.email-btn:focus {
+  color: #081107;
+}
+
 /* Footer */
 .site-footer {
   text-align: center;
